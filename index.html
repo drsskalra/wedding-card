@@ -344,7 +344,6 @@
     <div class="download-section">
         <button class="download-btn" onclick="downloadCard()">Download as JPG</button>
         <button class="download-btn" onclick="downloadCardAsPDF()">Download as PDF</button>
-        <p>Click a button to save the card</p>
     </div>
 
     <div id="wedding-card">
@@ -428,13 +427,14 @@
             button.disabled = true;
 
             try {
-                const card = document.getElementById('wedding-card');
+                const body = document.body;
                 
-                const canvas = await html2canvas(card, {
+                const canvas = await html2canvas(body, {
                     scale: 2,
-                    backgroundColor: '#ffffff',
                     logging: false,
-                    useCORS: false
+                    useCORS: true,
+                    allowTaint: true,
+                    backgroundColor: null
                 });
                 
                 canvas.toBlob(function(blob) {
@@ -465,13 +465,14 @@
             button.disabled = true;
 
             try {
-                const card = document.getElementById('wedding-card');
+                const body = document.body;
                 
-                const canvas = await html2canvas(card, {
+                const canvas = await html2canvas(body, {
                     scale: 2,
-                    backgroundColor: '#ffffff',
                     logging: false,
-                    useCORS: false
+                    useCORS: true,
+                    allowTaint: true,
+                    backgroundColor: null
                 });
                 
                 const imgData = canvas.toDataURL('image/jpeg', 0.95);
