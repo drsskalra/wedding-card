@@ -137,6 +137,54 @@
             color: #4a3728;
             font-size: 12px;
         }
+        
+        .calendar-section {
+            text-align: center;
+            padding: 20px;
+            margin-top: 20px;
+        }
+        
+        .calendar-btn {
+            background: linear-gradient(135deg, #d4af37 0%, #f4d03f 100%);
+            color: #4a3728;
+            border: none;
+            padding: 15px 30px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 25px;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
+            transition: transform 0.2s;
+            margin: 5px;
+        }
+        
+        .calendar-btn:hover {
+            transform: translateY(-2px);
+        }
+        
+        .calendar-section {
+            text-align: center;
+            padding: 20px;
+            margin-top: 20px;
+        }
+        
+        .calendar-btn {
+            background: linear-gradient(135deg, #d4af37 0%, #f4d03f 100%);
+            color: #4a3728;
+            border: none;
+            padding: 15px 30px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 25px;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
+            transition: transform 0.2s;
+            margin: 5px;
+        }
+        
+        .calendar-btn:hover {
+            transform: translateY(-2px);
+        }
 
         #wedding-card {
             width: 100%;
@@ -467,6 +515,10 @@
             </div>
         </div>
     </div>
+    
+    <div class="calendar-section">
+        <button class="calendar-btn" onclick="addToCalendar()">📅 Add to Calendar</button>
+    </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
@@ -478,6 +530,50 @@
         function closeQRModal() {
             document.getElementById('qrModal').classList.remove('active');
         }
+        
+        function addToCalendar() {
+            const events = [
+                {
+                    title: 'Anamika & Varad Wedding - Simant Poojan',
+                    start: '20260210T160000',
+                    end: '20260210T183000',
+                    description: 'Simant Poojan ceremony followed by Sangeet at 6:30 PM and Dinner at 7:00 PM',
+                    location: 'MTDC Resort, Keshori Road, Navegaon Bandh, District Gondia, Maharashtra'
+                },
+                {
+                    title: 'Anamika & Varad Wedding Day',
+                    start: '20260211T092400',
+                    end: '20260211T140000',
+                    description: 'Wedding ceremony at 9:24 AM Precise. Shagun ceremony will start at 11:30 AM',
+                    location: 'MTDC Resort, Keshori Road, Navegaon Bandh, District Gondia, Maharashtra'
+                }
+            ];
+            
+            // Create ICS file content for both events
+            let icsContent = 'BEGIN:VCALENDAR\nVERSION:2.0\nPRODID:-//Anamika & Varad Wedding//EN\n';
+            
+            events.forEach(event => {
+                icsContent += 'BEGIN:VEVENT\n';
+                icsContent += `SUMMARY:${event.title}\n`;
+                icsContent += `DTSTART:${event.start}\n`;
+                icsContent += `DTEND:${event.end}\n`;
+                icsContent += `DESCRIPTION:${event.description}\n`;
+                icsContent += `LOCATION:${event.location}\n`;
+                icsContent += 'END:VEVENT\n';
+            });
+            
+            icsContent += 'END:VCALENDAR';
+            
+            // Create download link
+            const blob = new Blob([icsContent], { type: 'text/calendar' });
+            const url = URL.createObjectURL(blob);
+            const link = document.createElement('a');
+            link.href = url;
+            link.download = 'Anamika_Varad_Wedding.ics';
+            link.click();
+            URL.revokeObjectURL(url);
+        }
+        
         async function downloadCard() {
             const button = event.target;
             button.textContent = 'Generating image...';
