@@ -27,31 +27,20 @@
         }
 
         .qr-section {
-            display: inline-block;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
+            border: none;
             padding: 12px 25px;
+            font-size: 14px;
             border-radius: 25px;
             cursor: pointer;
             box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
             transition: transform 0.2s;
             margin: 5px;
-            text-align: center;
-            border: none;
         }
         
         .qr-section:hover {
             transform: translateY(-2px);
-        }
-        
-        .qr-section p {
-            color: white;
-            margin: 0;
-            font-size: 14px;
-        }
-        
-        .qr-section img {
-            display: none;
         }
         
         .qr-modal {
@@ -382,30 +371,11 @@
             .card-footer p {
                 font-size: 20px;
             }
-            
-            .qr-section {
-                padding: 15px;
-            }
-            
-            .qr-section img {
-                width: 120px;
-                height: 120px;
-            }
         }
 
         @media (min-width: 1024px) {
             body {
                 padding: 20px;
-            }
-            
-            .qr-section {
-                top: 20px;
-                right: 20px;
-            }
-            
-            .qr-section img {
-                width: 150px;
-                height: 150px;
             }
         }
     </style>
@@ -423,9 +393,7 @@
     <div class="download-section">
         <button class="download-btn" onclick="downloadCard()">Download as JPG</button>
         <button class="download-btn" onclick="downloadCardAsPDF()">Download as PDF</button>
-        <button class="qr-section" onclick="openQRModal()">
-            <p>View QR Code</p>
-        </button>
+        <button class="qr-section" onclick="openQRModal()">View QR Code</button>
     </div>
 
     <div id="wedding-card">
