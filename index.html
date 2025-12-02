@@ -89,12 +89,32 @@
         #wedding-card {
             width: 100%;
             max-width: 1200px;
-            background: rgba(255, 255, 255, 0.4);
+            background-image: url('Media.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
             border-radius: 20px;
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
             position: relative;
             overflow: hidden;
             padding: 30px 20px;
+        }
+        
+        #wedding-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(255, 255, 255, 0.4);
+            border-radius: 20px;
+            z-index: 0;
+        }
+        
+        #wedding-card > * {
+            position: relative;
+            z-index: 1;
         }
 
         .corner-decoration {
@@ -427,9 +447,9 @@
             button.disabled = true;
 
             try {
-                const body = document.body;
+                const card = document.getElementById('wedding-card');
                 
-                const canvas = await html2canvas(body, {
+                const canvas = await html2canvas(card, {
                     scale: 2,
                     logging: false,
                     useCORS: true,
@@ -465,9 +485,9 @@
             button.disabled = true;
 
             try {
-                const body = document.body;
+                const card = document.getElementById('wedding-card');
                 
-                const canvas = await html2canvas(body, {
+                const canvas = await html2canvas(card, {
                     scale: 2,
                     logging: false,
                     useCORS: true,
