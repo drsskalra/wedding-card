@@ -679,12 +679,15 @@
                         * {
                             -webkit-print-color-adjust: exact !important;
                             print-color-adjust: exact !important;
+                            color-adjust: exact !important;
                         }
                         html, body {
                             height: 100%;
                             margin: 0;
                             padding: 0;
                             overflow: hidden;
+                            -webkit-print-color-adjust: exact !important;
+                            print-color-adjust: exact !important;
                         }
                         body * {
                             visibility: hidden;
@@ -699,13 +702,24 @@
                             width: 100vw;
                             height: 100vh;
                             max-height: 100vh;
-                            box-shadow: none;
-                            -webkit-print-color-adjust: exact;
-                            print-color-adjust: exact;
+                            box-shadow: none !important;
+                            background-image: url('Picture1.png') !important;
+                            background-size: cover !important;
+                            background-position: center !important;
+                            background-repeat: no-repeat !important;
+                            -webkit-print-color-adjust: exact !important;
+                            print-color-adjust: exact !important;
+                            color-adjust: exact !important;
                             transform: scale(0.90);
                             transform-origin: center;
                             page-break-after: avoid;
                             page-break-inside: avoid;
+                        }
+                        #wedding-card::before {
+                            -webkit-print-color-adjust: exact !important;
+                            print-color-adjust: exact !important;
+                            color-adjust: exact !important;
+                            background: rgba(255, 255, 255, 0.4) !important;
                         }
                         .download-section, .calendar-section, .qr-modal {
                             display: none !important;
