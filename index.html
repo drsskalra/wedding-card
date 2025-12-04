@@ -672,21 +672,7 @@
                 const style = document.createElement('style');
                 style.id = 'print-style';
                 style.innerHTML = `
-                    @page {
-                        size: A4;
-                        margin: 0 !important;
-                    }
                     @media print {
-                        * {
-                            box-sizing: border-box;
-                        }
-                        html, body {
-                            width: 210mm;
-                            height: 297mm;
-                            margin: 0 !important;
-                            padding: 0 !important;
-                            overflow: hidden;
-                        }
                         body * {
                             visibility: hidden;
                         }
@@ -694,29 +680,10 @@
                             visibility: visible;
                         }
                         #wedding-card {
-                            position: fixed !important;
-                            left: 0 !important;
-                            top: 0 !important;
-                            right: 0 !important;
-                            bottom: 0 !important;
-                            width: 210mm !important;
-                            height: 297mm !important;
-                            max-width: 210mm !important;
-                            max-height: 297mm !important;
-                            margin: 0 !important;
-                            padding: 20mm !important;
-                            box-shadow: none !important;
-                            border-radius: 0 !important;
-                            page-break-after: avoid !important;
-                            page-break-before: avoid !important;
-                            page-break-inside: avoid !important;
-                            -webkit-print-color-adjust: exact !important;
-                            print-color-adjust: exact !important;
-                            transform: scale(0.95);
-                            transform-origin: top center;
-                        }
-                        #wedding-card > * {
-                            page-break-inside: avoid !important;
+                            position: relative;
+                            box-shadow: none;
+                            -webkit-print-color-adjust: exact;
+                            print-color-adjust: exact;
                         }
                         .download-section, .calendar-section, .qr-modal {
                             display: none !important;
