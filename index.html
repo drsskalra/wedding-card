@@ -668,19 +668,27 @@
             button.disabled = true;
 
             try {
+                // Detect if mobile device
+                const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+                
                 // Create a print-specific style
                 const style = document.createElement('style');
                 style.id = 'print-style';
                 style.innerHTML = `
                     @page {
-                        size: tabloid;
+                        size: ${isMobile ? 'auto' : 'tabloid'};
+                        margin: ${isMobile ? '10mm' : '0'};
                     }
                     @media print {
+                        * {
+                            -webkit-print-color-adjust: exact !important;
+                            print-color-adjust: exact !important;
+                        }
                         html, body {
-                            height: 100%;
+                            height: ${isMobile ? 'auto' : '100%'};
                             margin: 0;
                             padding: 0;
-                            overflow: hidden;
+                            overflow: ${isMobile ? 'visible' : 'hidden'};
                         }
                         body * {
                             visibility: hidden;
@@ -689,19 +697,21 @@
                             visibility: visible;
                         }
                         #wedding-card {
-                            position: fixed !important;
+                            position: ${isMobile ? 'relative' : 'fixed'} !important;
                             top: 0;
                             left: 0;
-                            width: 100vw;
-                            height: 100vh;
-                            max-height: 100vh;
+                            width: 100%;
+                            ${isMobile ? '' : 'height: 100vh; max-height: 100vh;'}
                             box-shadow: none;
                             -webkit-print-color-adjust: exact;
                             print-color-adjust: exact;
-                            transform: scale(0.95);
-                            transform-origin: center;
+                            ${isMobile ? '' : 'transform: scale(0.90); transform-origin: center;'}
                             page-break-after: avoid;
                             page-break-inside: avoid;
+                            border-radius: ${isMobile ? '0' : '20px'};
+                        }
+                        #wedding-card::before {
+                            ${isMobile ? 'border-radius: 0;' : ''}
                         }
                         .download-section, .calendar-section, .qr-modal {
                             display: none !important;
