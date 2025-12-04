@@ -672,7 +672,18 @@
                 const style = document.createElement('style');
                 style.id = 'print-style';
                 style.innerHTML = `
+                    @page {
+                        size: A4;
+                        margin: 0;
+                    }
                     @media print {
+                        html, body {
+                            width: 210mm;
+                            height: 297mm;
+                            margin: 0;
+                            padding: 0;
+                            overflow: hidden;
+                        }
                         body * {
                             visibility: hidden;
                         }
@@ -684,7 +695,12 @@
                             left: 0;
                             top: 0;
                             width: 100%;
+                            height: 100%;
+                            max-height: 297mm;
                             box-shadow: none;
+                            page-break-after: avoid;
+                            page-break-before: avoid;
+                            page-break-inside: avoid;
                             -webkit-print-color-adjust: exact;
                             print-color-adjust: exact;
                         }
