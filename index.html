@@ -668,32 +668,36 @@
 
             try {
                 const card = document.getElementById('wedding-card');
-                
-                const canvas = await html2canvas(card, {
-                    scale: 2,
-                    logging: false,
-                    useCORS: true,
-                    allowTaint: true,
-                    backgroundColor: null
-                });
-                
-                const imgData = canvas.toDataURL('image/jpeg', 0.95);
                 const { jsPDF } = window.jspdf;
+                
+                // Create PDF with A4 size
                 const pdf = new jsPDF({
                     orientation: 'portrait',
-                    unit: 'px',
-                    format: [canvas.width, canvas.height]
+                    unit: 'mm',
+                    format: 'a4'
                 });
                 
-                pdf.addImage(imgData, 'JPEG', 0, 0, canvas.width, canvas.height);
-                pdf.save('Anamika_Varad_Wedding_Card.pdf');
-                
-                button.textContent = 'Downloaded!';
-                button.disabled = false;
-                
-                setTimeout(() => {
-                    button.textContent = 'Download as PDF';
-                }, 3000);
+                // Use html method to preserve links
+                await pdf.html(card, {
+                    callback: function(doc) {
+                        doc.save('Anamika_Varad_Wedding_Card.pdf');
+                        button.textContent = 'Downloaded!';
+                        button.disabled = false;
+                        
+                        setTimeout(() => {
+                            button.textContent = 'Download as PDF';
+                        }, 3000);
+                    },
+                    x: 10,
+                    y: 10,
+                    width: 190,
+                    windowWidth: 800,
+                    html2canvas: {
+                        scale: 2,
+                        useCORS: true,
+                        logging: false
+                    }
+                });
                 
             } catch(error) {
                 console.error('Error generating PDF:', error);
