@@ -480,7 +480,7 @@
 
     <div class="download-section">
         <button class="download-btn" onclick="downloadCard()">Download as JPG</button>
-        <button class="download-btn" onclick="downloadCardAsPDF()">Download as PDF</button>
+        <button class="download-btn" onclick="downloadCardAsPDF()">Save as PDF</button>
         <button class="qr-section" onclick="openQRModal()">Tap to Share</button>
     </div>
 
@@ -685,6 +685,8 @@
                             top: 0;
                             width: 100%;
                             box-shadow: none;
+                            -webkit-print-color-adjust: exact;
+                            print-color-adjust: exact;
                         }
                         .download-section, .calendar-section, .qr-modal {
                             display: none !important;
@@ -702,7 +704,7 @@
                     if (printStyle) {
                         printStyle.remove();
                     }
-                    button.textContent = 'Download as PDF';
+                    button.textContent = 'Save as PDF';
                     button.disabled = false;
                 }, 1000);
                 
