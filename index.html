@@ -677,9 +677,11 @@
                         margin: 0;
                     }
                     @media print {
-                        body {
+                        html, body {
+                            height: 100%;
                             margin: 0;
                             padding: 0;
+                            overflow: hidden;
                         }
                         body * {
                             visibility: hidden;
@@ -688,12 +690,19 @@
                             visibility: visible;
                         }
                         #wedding-card {
-                            position: relative;
+                            position: fixed !important;
+                            top: 0;
+                            left: 0;
+                            width: 100vw;
+                            height: 100vh;
+                            max-height: 100vh;
                             box-shadow: none;
                             -webkit-print-color-adjust: exact;
                             print-color-adjust: exact;
                             transform: scale(0.88);
                             transform-origin: top left;
+                            page-break-after: avoid;
+                            page-break-inside: avoid;
                         }
                         .download-section, .calendar-section, .qr-modal {
                             display: none !important;
