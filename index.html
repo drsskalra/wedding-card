@@ -39,6 +39,14 @@
             margin: 5px;
         }
         
+        #toggleBtn {
+            background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
+            width: auto;
+            min-width: 300px;
+            padding: 12px 37.5px;
+            box-shadow: 0 4px 15px rgba(255, 107, 53, 0.4);
+        }
+        
         .qr-section:hover {
             transform: translateY(-2px);
         }
@@ -466,6 +474,46 @@
                 padding: 20px;
             }
         }
+
+        /* Toggle view styles */
+        .view-container {
+            display: none;
+        }
+
+        .view-container.active {
+            display: block;
+        }
+
+        #wedding-schedule {
+            width: 100%;
+            max-width: 1200px;
+            background-image: url('Picture1.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            position: relative;
+            overflow: hidden;
+            padding: 30px 20px;
+        }
+        
+        #wedding-schedule::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(255, 255, 255, 0.4);
+            border-radius: 20px;
+            z-index: 0;
+        }
+        
+        #wedding-schedule > * {
+            position: relative;
+            z-index: 1;
+        }
     </style>
 </head>
 <body>
@@ -479,11 +527,12 @@
     </div>
 
     <div class="download-section">
-        <button class="download-btn" onclick="downloadCard()">Download as JPG</button>
-        <button class="download-btn" onclick="downloadCardAsPDF()">Save as PDF</button>
-        <button class="qr-section" onclick="openQRModal()">Tap to Share</button>
+        <div style="width: 100%; display: flex; justify-content: center; align-items: center; margin-bottom: 10px;">
+            <button class="qr-section" id="toggleBtn" onclick="toggleView()">View Schedule & Contacts</button>
+        </div>
     </div>
 
+    <div id="inviteView" class="view-container active">
     <div id="wedding-card">
         <div class="corner-decoration corner-top-left"></div>
         <div class="corner-decoration corner-top-right"></div>
@@ -494,13 +543,13 @@
             <h1>॥ श्री गणेशाय नमः ॥</h1>
             <div class="invitation-text">
                 <p>
-                    Two hearts will unite beneath the sky so wide;<br>
-                    In love's embrace, they'll forever abide.<br>
-                    Through life's long journey, hand in hand they'll glide,<br>
-                    A bond so pure, with nothing to hide.<br>
-                    Together they will bloom, where dreams reside.
+                    Two Hearts will Unite Beneath the Sky so Wide;<br>
+                    In Love's Embrace, They'll Forever Abide.<br>
+                    Through Life's Long Journey, Hand in Hand They'll Glide,<br>
+                    A Bond so Pure, with Nothing to Hide.<br>
+                    Together They will Bloom, Where Dreams Reside.
                 </p>
-                <p><strong>Mrs. Hemlata and Mr. Ghanshyam Lothe<br>with entire Lothe family<br>joyfully invite you to celebrate the sacred union of</strong></p>
+                <p><strong>Mrs. Hemlata and Mr. Ghanshyam Lothe<br>with Entire Lothe Family<br>Joyfully Invite You to Celebrate the Sacred Union of</strong></p>
             </div>
         </div>
 
@@ -531,14 +580,14 @@
                         <p>6:30 PM</p>
                     </div>
                 </div>
-                <p style="text-align: center; font-size: 16px; color: #1f0ae0; margin-top: 20px; font-style: italic; text-decoration: underline;">Dinner will be served from 7:00 PM</p>
+                <p style="text-align: center; font-size: 16px; color: #1f0ae0; margin-top: 20px; font-style: italic; text-decoration: underline;">Dinner will be Served 7:00 PM Onwards</p>
                 <div class="ceremony-item" style="margin-top: 30px;">
                     <h4>Wedding Day</h4>
                     <p>February 11, 2026</p>
                     <p>9:24 AM Precise</p>
                 </div>
-                <p style="text-align: center; font-size: 16px; color: #4a3728; margin-top: 15px; font-style: italic;">Shagun ceremony will start at 11:30 AM</p>
-                <p style="text-align: center; font-size: 16px; color: #1f0ae0; margin-top: 20px; font-style: italic; text-decoration: underline;">Lunch will be served at 10:00 AM</p>
+                <p style="text-align: center; font-size: 16px; color: #4a3728; margin-top: 15px; font-style: italic;">Shagun Ceremony will Start at 11:30 AM</p>
+                <p style="text-align: center; font-size: 16px; color: #1f0ae0; margin-top: 20px; font-style: italic; text-decoration: underline;">Lunch will be Served 10:00 AM Onwards</p>
             </div>
 
             <div class="venue-section">
@@ -549,9 +598,9 @@
             </div>
 
             <div class="card-footer">
-                <p><strong>Your presence will make our celebration complete</strong></p>
+                <p><strong>Your Presence will Make Our Celebration Complete</strong></p>
                 <p style="font-style: italic; margin-top: 20px;">
-                    Grace, Anjali, and Dr. Shashank Singh Kalra are looking forward to celebrating with you!
+                    Grace, Anjali, and Dr. Shashank Singh Kalra are Looking Forward to Celebrating with You!
                 </p>
                 
                 <div style="margin-top: 30px; padding-top: 20px; border-top: 2px solid rgba(74, 55, 40, 0.3);">
@@ -559,20 +608,135 @@
                     <p>Shree Ghanshyam Sakharamji Lothe</p>
                     <p>Nagpur, Maharashtra</p>
                     <p style="margin-top: 10px; font-weight: bold;">Mob. <a href="tel:+919699763078" class="phone-link">9699763078</a>, <a href="tel:+917038965875" class="phone-link">7038965875</a></p>
-                    <p style="font-size: 12px; color: #1f0ae0; margin-top: 5px; font-style: italic;">Click on the phone number to call</p>
+                    <p style="font-size: 12px; color: #1f0ae0; margin-top: 5px; font-style: italic;">Click on the Phone Number to Call</p>
                 </div>
             </div>
         </div>
     </div>
+    </div>
+
+    <div id="scheduleView" class="view-container">
+    <div id="wedding-schedule">
+        <div class="corner-decoration corner-top-left"></div>
+        <div class="corner-decoration corner-top-right"></div>
+        <div class="corner-decoration corner-bottom-left"></div>
+        <div class="corner-decoration corner-bottom-right"></div>
+
+        <div class="card-header">
+            <h1 style="margin-bottom: 5px;">Anamika & Varad</h1>
+            <h1>Wedding Schedule</h1>
+        </div>
+
+        <div class="card-content">
+            <div style="padding: 20px; text-align: left;">
+                
+                <div style="margin-bottom: 30px;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+                        <p style="color: #4a3728; font-size: 18px; font-weight: bold; margin: 0;">February 8, 2026 - Mehendi Ceremony</p>
+                        <a href="https://maps.app.goo.gl/d5X6ceguRSL3uJMj8" target="_blank" style="display: inline-block; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 6px 15px; border-radius: 20px; text-decoration: none; font-size: 12px; box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3); white-space: nowrap;">↱ Get Directions</a>
+                    </div>
+                    <p style="color: #4a3728; font-size: 16px; margin-left: 20px;">04:00 PM |                 Mehendi Ceremony</p>
+                    <p style="color: #4a3728; font-size: 16px; margin-left: 20px;">06:00 PM |                 Dinner</p>
+                    <p style="color: #4a3728; font-size: 16px; margin-top: 10px; margin-left: 20px;"><strong>Venue:</strong> Lothe Residence, Nagpur - Tirupati Sagar Apartment, Flat 204, Ayurvedic Layout</p>
+                </div>
+
+                <div style="margin-bottom: 30px;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+                        <p style="color: #4a3728; font-size: 18px; font-weight: bold; margin: 0;">February 9, 2026 - Haldi Ceremony</p>
+                        <a href="https://maps.app.goo.gl/d5X6ceguRSL3uJMj8" target="_blank" style="display: inline-block; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 6px 15px; border-radius: 20px; text-decoration: none; font-size: 12px; box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3); white-space: nowrap;">↱ Get Directions</a>
+                    </div>
+                    <p style="color: #4a3728; font-size: 16px; margin-left: 20px;">09:00 AM |                 Breakfast</p>
+                    <p style="color: #4a3728; font-size: 16px; margin-left: 20px;">01:00 PM |                 Lunch</p>
+                    <p style="color: #4a3728; font-size: 16px; margin-left: 20px;">02:00 PM |                 Haldi Ceremony</p>
+                    <p style="color: #4a3728; font-size: 16px; margin-left: 20px;">07:00 PM |                 Dinner</p>
+                    <p style="color: #4a3728; font-size: 16px; margin-top: 10px; margin-left: 20px;"><strong>Venue:</strong> Lothe Residence, Nagpur - Tirupati Sagar Apartment, Flat 204, Ayurvedic Layout</p>
+                    <p style="color: #4a3728; font-size: 14px; margin-left: 20px; margin-top: 5px;"><span style="color: #1f0ae0; font-style: italic;">Car Service Available - <a href="tel:+919699763078" style="color: #1f0ae0; text-decoration: underline; font-size: 14px;">9699763078</a>, <a href="tel:+917038965875" style="color: #1f0ae0; text-decoration: underline; font-size: 14px;">7038965875</a></span></p>
+                </div>
+
+                <div style="margin-bottom: 30px;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+                        <p style="color: #4a3728; font-size: 18px; font-weight: bold; margin: 0;">February 10, 2026 - Baarat Welcome</p>
+                        <a href="https://maps.app.goo.gl/friFTYQLjnABcK916?g_st=a" target="_blank" style="display: inline-block; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 6px 15px; border-radius: 20px; text-decoration: none; font-size: 12px; box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3); white-space: nowrap;">↱ Get Directions</a>
+                    </div>
+                    <p style="color: #4a3728; font-size: 16px; margin-left: 20px;">04:00 AM |                 Baarat Arrival</p>
+                    <p style="color: #4a3728; font-size: 16px; margin-left: 20px;">09:00 AM |                 Breakfast</p>
+                    <p style="color: #4a3728; font-size: 16px; margin-left: 20px;">10:00 AM |                 Departure to Resort <span style="color: #1f0ae0; font-size: 14px; font-style: italic;">(Bus will Arrive at Hotel at 9 AM)</span></p>
+                    <p style="color: #4a3728; font-size: 16px; margin-top: 10px; margin-left: 20px;"><strong>Venue:</strong> Hotel Urban Stay, Nagpur</p>
+                </div>
+
+                <div style="margin-bottom: 30px;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+                        <p style="color: #4a3728; font-size: 18px; font-weight: bold; margin: 0;">February 10, 2026 - Simant Poojan and Sangeet</p>
+                        <a href="https://maps.app.goo.gl/r42vR2QUktmUKFBz6" target="_blank" style="display: inline-block; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 6px 15px; border-radius: 20px; text-decoration: none; font-size: 12px; box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3); white-space: nowrap;">↱ Get Directions</a>
+                    </div>
+                    <p style="color: #4a3728; font-size: 16px; margin-left: 20px;">01:00 PM |                 Arrival at Resort and Lunch <span style="color: #1f0ae0; font-size: 14px; font-style: italic;">(Rest and Refresh for Amazing Evening)</span></p>
+                    <p style="color: #4a3728; font-size: 16px; margin-left: 20px;">04:00 PM |                 Simant Poojan</p>
+                    <p style="color: #4a3728; font-size: 16px; margin-left: 20px;">05:00 PM |                 Light Breakfast</p>
+                    <p style="color: #4a3728; font-size: 16px; margin-left: 20px;">07:00 PM |                 Sangeet and Dinner</p>
+                    <p style="color: #1f0ae0; font-size: 14px; margin-left: 20px; margin-top: 10px; font-style: italic;">Rickshaw Service to Stage (<a href="tel:+919699763078" style="color: #1f0ae0; text-decoration: underline;">9699763078</a>, <a href="tel:+917038965875" style="color: #1f0ae0; text-decoration: underline;">7038965875</a>)</p>
+                    <p style="color: #1f0ae0; font-size: 14px; margin-left: 20px; font-style: italic;">Food Service (<a href="tel:+919699763078" style="color: #1f0ae0; text-decoration: underline;">9699763078</a>, <a href="tel:+917038965875" style="color: #1f0ae0; text-decoration: underline;">7038965875</a>)</p>
+                    <p style="color: #1f0ae0; font-size: 14px; margin-left: 20px; font-style: italic;">Medical Assistance (<a href="tel:+919699763078" style="color: #1f0ae0; text-decoration: underline;">9699763078</a>, <a href="tel:+917038965875" style="color: #1f0ae0; text-decoration: underline;">7038965875</a>)</p>
+                    <p style="color: #4a3728; font-size: 16px; margin-top: 10px; margin-left: 20px;"><strong>Venue:</strong> MTDC Resort - Keshori Road, Navegaon Bandh, District Gondia, Maharashtra</p>
+                </div>
+
+                <div style="margin-bottom: 30px;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+                        <p style="color: #4a3728; font-size: 18px; font-weight: bold; margin: 0;">February 11, 2026 - Wedding Ceremony</p>
+                        <a href="https://maps.app.goo.gl/r42vR2QUktmUKFBz6" target="_blank" style="display: inline-block; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 6px 15px; border-radius: 20px; text-decoration: none; font-size: 12px; box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3); white-space: nowrap;">↱ Get Directions</a>
+                    </div>
+                    <p style="color: #4a3728; font-size: 16px; margin-left: 20px;">07:00 AM |                 Breakfast</p>
+                    <p style="color: #4a3728; font-size: 16px; margin-left: 20px;">09:24 AM |                 Wedding Ceremony <span style="color: #1f0ae0; font-size: 14px; font-style: italic;">(Wedding Rituals will Continue till 11:30 AM)</span></p>
+                    <p style="color: #4a3728; font-size: 16px; margin-left: 20px;">10:00 AM |                 Lunch</p>
+                    <p style="color: #4a3728; font-size: 16px; margin-left: 20px;">11:30 AM |                 Shagun Ceremony</p>
+                    <p style="color: #4a3728; font-size: 16px; margin-left: 20px;">01:00 PM |                 Bride and Groom Departure</p>
+                    <p style="color: #4a3728; font-size: 16px; margin-top: 10px; margin-left: 20px;"><strong>Venue:</strong> MTDC Resort - Keshori Road, Navegaon Bandh, District Gondia, Maharashtra</p>
+                </div>
+            </div>
+
+            <div class="card-footer">
+                <p><strong>We Look Forward to Celebrating With You!</strong></p>
+            </div>
+        </div>
+    </div>
+    </div>
     
-    <div class="calendar-section">
+    <div class="calendar-section" id="calendarButtons">
         <button class="calendar-btn" onclick="addToCalendar()">📅 Add to Calendar</button>
         <a href="https://maps.app.goo.gl/cGjAQPRv63G6PDd86" target="_blank" class="calendar-btn" style="display: inline-block; text-decoration: none;">↱ Get Directions</a>
+    </div>
+
+    <div class="download-section">
+        <button class="download-btn" onclick="downloadCard()">Download as JPG</button>
+        <button class="download-btn" onclick="downloadCardAsPDF()">Save as PDF</button>
+        <button class="qr-section" onclick="openQRModal()">Tap to Share</button>
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <script>
+        let currentView = 'invite';
+
+        function toggleView() {
+            const inviteView = document.getElementById('inviteView');
+            const scheduleView = document.getElementById('scheduleView');
+            const toggleBtn = document.getElementById('toggleBtn');
+            const calendarButtons = document.getElementById('calendarButtons');
+            
+            if (currentView === 'invite') {
+                inviteView.classList.remove('active');
+                scheduleView.classList.add('active');
+                toggleBtn.textContent = 'View Invitation';
+                calendarButtons.style.display = 'none';
+                currentView = 'schedule';
+            } else {
+                scheduleView.classList.remove('active');
+                inviteView.classList.add('active');
+                toggleBtn.textContent = 'View Schedule & Contacts';
+                calendarButtons.style.display = 'block';
+                currentView = 'invite';
+            }
+        }
+
         function openQRModal() {
             document.getElementById('qrModal').classList.add('active');
         }
@@ -630,7 +794,12 @@
             button.disabled = true;
 
             try {
-                const card = document.getElementById('wedding-card');
+                const card = currentView === 'invite' 
+                    ? document.getElementById('wedding-card')
+                    : document.getElementById('wedding-schedule');
+                const filename = currentView === 'invite' 
+                    ? 'Anamika_Varad_Wedding_Card.jpg'
+                    : 'Anamika_Varad_Wedding_Schedule.jpg';
                 
                 const canvas = await html2canvas(card, {
                     scale: 2,
@@ -643,7 +812,7 @@
                 canvas.toBlob(function(blob) {
                     const url = URL.createObjectURL(blob);
                     const link = document.createElement('a');
-                    link.download = 'Anamika_Varad_Wedding_Card.jpg';
+                    link.download = filename;
                     link.href = url;
                     link.click();
                     
@@ -692,10 +861,11 @@
                         body * {
                             visibility: hidden;
                         }
-                        #wedding-card, #wedding-card * {
+                        #wedding-card, #wedding-card *,
+                        #wedding-schedule, #wedding-schedule * {
                             visibility: visible;
                         }
-                        #wedding-card {
+                        #wedding-card, #wedding-schedule {
                             position: fixed !important;
                             top: 0;
                             left: 0;
@@ -715,7 +885,8 @@
                             page-break-after: avoid;
                             page-break-inside: avoid;
                         }
-                        #wedding-card::before {
+                        #wedding-card::before,
+                        #wedding-schedule::before {
                             -webkit-print-color-adjust: exact !important;
                             print-color-adjust: exact !important;
                             color-adjust: exact !important;
