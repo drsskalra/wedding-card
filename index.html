@@ -108,6 +108,59 @@
             line-height: 1;
         }
         
+        .language-modal {
+            display: flex;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 3000;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .language-modal.hidden {
+            display: none;
+        }
+        
+        .language-modal-content {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+            max-width: 400px;
+            width: 100%;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+        }
+        
+        .language-modal h2 {
+            color: #4a3728;
+            margin-bottom: 30px;
+            font-size: 24px;
+        }
+        
+        .language-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            font-size: 18px;
+            border-radius: 30px;
+            cursor: pointer;
+            margin: 10px;
+            width: 200px;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+            transition: transform 0.2s;
+        }
+        
+        .language-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+        }
+        
         @media (min-width: 600px) {
             .qr-modal img {
                 width: 400px;
@@ -517,9 +570,19 @@
     </style>
 </head>
 <body>
+    <!-- Language Selection Modal -->
+    <div id="languageModal" class="language-modal">
+        <div class="language-modal-content">
+            <h2>Select Language / भाषा चुनें / भाषा निवडा</h2>
+            <button class="language-btn" onclick="selectLanguage('en')">English</button>
+            <button class="language-btn" onclick="selectLanguage('hi')">हिंदी</button>
+            <button class="language-btn" onclick="selectLanguage('mr')">मराठी</button>
+        </div>
+    </div>
+
     <div class="qr-modal" id="qrModal" onclick="closeQRModal()">
         <div class="qr-modal-content" onclick="event.stopPropagation()">
-            <button class="qr-close" onclick="closeQRModal()">×</button>
+            <button class="qr-close" onclick="closeQRModal()">��</button>
             <p>Scan to Share Wedding Invitation</p>
             <img src='fnlQR.png' alt='QR Code Large' />
             <p>Tap outside to close</p>
@@ -703,9 +766,6 @@
     <div class="calendar-section" id="calendarButtons">
         <button class="calendar-btn" onclick="addToCalendar()">📅 Add to Calendar</button>
         <a href="https://maps.app.goo.gl/cGjAQPRv63G6PDd86" target="_blank" class="calendar-btn" style="display: inline-block; text-decoration: none;">↱ Get Directions</a>
-    </div>
-
-    <div class="download-section">
         <button class="download-btn" onclick="downloadCard()">Download as JPG</button>
         <button class="download-btn" onclick="downloadCardAsPDF()">Save as PDF</button>
         <button class="qr-section" onclick="openQRModal()">Tap to Share</button>
@@ -715,6 +775,34 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <script>
         let currentView = 'invite';
+        let currentLanguage = 'en';
+
+        // Language selection
+        function selectLanguage(lang) {
+            currentLanguage = lang;
+            localStorage.setItem('weddingLanguage', lang);
+            document.getElementById('languageModal').classList.add('hidden');
+            updateContent(lang);
+        }
+
+        // Check for saved language preference on page load
+        window.addEventListener('DOMContentLoaded', function() {
+            const savedLanguage = localStorage.getItem('weddingLanguage');
+            if (savedLanguage) {
+                currentLanguage = savedLanguage;
+                document.getElementById('languageModal').classList.add('hidden');
+                updateContent(savedLanguage);
+            } else {
+                document.getElementById('languageModal').classList.remove('hidden');
+            }
+        });
+
+        function updateContent(lang) {
+            // This function will update the page content based on selected language
+            // For now, we're keeping English content as default
+            // You can add Hindi and Marathi translations here
+            console.log('Language selected:', lang);
+        }
 
         function toggleView() {
             const inviteView = document.getElementById('inviteView');
