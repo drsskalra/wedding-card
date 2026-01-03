@@ -149,8 +149,8 @@
         
         .calendar-section {
             text-align: center;
-            padding: 20px;
-            margin-top: 20px;
+            padding: 10px;
+            margin-top: 5px;
         }
         
         .calendar-btn {
@@ -168,12 +168,6 @@
         
         .calendar-btn:hover {
             transform: translateY(-2px);
-        }
-        
-        .calendar-section {
-            text-align: center;
-            padding: 20px;
-            margin-top: 20px;
         }
         
         .rsvp-section {
@@ -704,6 +698,9 @@
     <div class="calendar-section" id="calendarButtons">
         <button class="calendar-btn" onclick="addToCalendar()">📅 Add to Calendar</button>
         <a href="https://maps.app.goo.gl/cGjAQPRv63G6PDd86" target="_blank" class="calendar-btn" style="display: inline-block; text-decoration: none;">↱ Get Directions</a>
+    </div>
+
+    <div class="calendar-section" id="downloadButtons">
         <button class="download-btn" onclick="downloadCard()">Download as JPG</button>
         <button class="download-btn" onclick="downloadCardAsPDF()">Save as PDF</button>
         <button class="qr-section" onclick="openQRModal()">Tap to Share</button>
@@ -719,18 +716,21 @@
             const scheduleView = document.getElementById('scheduleView');
             const toggleBtn = document.getElementById('toggleBtn');
             const calendarButtons = document.getElementById('calendarButtons');
+            const downloadButtons = document.getElementById('downloadButtons');
             
             if (currentView === 'invite') {
                 inviteView.classList.remove('active');
                 scheduleView.classList.add('active');
                 toggleBtn.textContent = 'View Invitation';
                 calendarButtons.style.display = 'none';
+                downloadButtons.style.display = 'block';
                 currentView = 'schedule';
             } else {
                 scheduleView.classList.remove('active');
                 inviteView.classList.add('active');
                 toggleBtn.textContent = 'View Schedule & Contacts';
                 calendarButtons.style.display = 'block';
+                downloadButtons.style.display = 'block';
                 currentView = 'invite';
             }
         }
