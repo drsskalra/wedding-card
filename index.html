@@ -523,12 +523,98 @@
 
     <div class="download-section">
         <div style="width: 100%; display: flex; justify-content: center; align-items: center; margin-bottom: 10px;">
-            <button class="qr-section" id="toggleBtn" onclick="toggleView()">View Schedule & Contacts</button>
+            <button class="qr-section" id="toggleBtn" onclick="toggleView()">View Invitation</button>
         </div>
     </div>
 
-    <div id="inviteView" class="view-container active">
-    <div id="wedding-card">
+
+    <div id="scheduleView" style="display: block;">
+    <div id="wedding-schedule">
+        <div class="corner-decoration corner-top-left"></div>
+        <div class="corner-decoration corner-top-right"></div>
+        <div class="corner-decoration corner-bottom-left"></div>
+        <div class="corner-decoration corner-bottom-right"></div>
+
+        <div class="card-header">
+            <h1 style="margin-bottom: 5px;">Anamika & Varad</h1>
+            <h1>Wedding Schedule</h1>
+        </div>
+
+        <div class="card-content">
+            <div style="padding: 20px; text-align: left;">
+                <!-- Schedule details here (copied from previous inviteView) -->
+                <div style="margin-bottom: 30px;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+                        <p style="color: #4a3728; font-size: 18px; font-weight: bold; margin: 0;">February 8, 2026 - Mehendi Ceremony</p>
+                        <a href="https://maps.app.goo.gl/d5X6ceguRSL3uJMj8" target="_blank" style="display: inline-block; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 6px 15px; border-radius: 20px; text-decoration: none; font-size: 12px; box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3); white-space: nowrap;">↱ Get Directions</a>
+                    </div>
+                    <p style="color: #4a3728; font-size: 16px; margin-left: 20px;">04:00 PM |                 Mehendi Ceremony</p>
+                    <p style="color: #4a3728; font-size: 16px; margin-left: 20px;">06:00 PM |                 Dinner</p>
+                    <p style="color: #4a3728; font-size: 16px; margin-top: 10px; margin-left: 20px;"><strong>Venue:</strong> Lothe Residence, Nagpur - Tirupati Sagar Apartment, Flat 204, Ayurvedic Layout</p>
+                </div>
+
+                <div style="margin-bottom: 30px;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+                        <p style="color: #4a3728; font-size: 18px; font-weight: bold; margin: 0;">February 9, 2026 - Haldi Ceremony</p>
+                        <a href="https://maps.app.goo.gl/d5X6ceguRSL3uJMj8" target="_blank" style="display: inline-block; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 6px 15px; border-radius: 20px; text-decoration: none; font-size: 12px; box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3); white-space: nowrap;">↱ Get Directions</a>
+                    </div>
+                    <p style="color: #4a3728; font-size: 16px; margin-left: 20px;">08:00 AM |                 Breakfast</p>
+                    <p style="color: #4a3728; font-size: 16px; margin-left: 20px;">10:30 AM |                 Haldi Ceremony</p>
+                    <p style="color: #4a3728; font-size: 16px; margin-left: 20px;">12:30 PM |                 Lunch</p>
+                    <p style="color: #4a3728; font-size: 16px; margin-left: 20px;">07:00 PM |                 Dinner</p>
+                    <p style="color: #4a3728; font-size: 16px; margin-top: 10px; margin-left: 20px;"><strong>Venue:</strong> Lothe Residence, Nagpur - Tirupati Sagar Apartment, Flat 204, Ayurvedic Layout</p>
+                    <p style="color: #4a3728; font-size: 14px; margin-left: 20px; margin-top: 5px;"><span style="color: #1f0ae0; font-style: italic;">Car Service Available - Rahul (<a href="tel:+918390784640" style="color: #1f0ae0; text-decoration: underline; font-size: 14px;">8390784640)</a></span></p>
+                </div>
+
+                <div style="margin-bottom: 30px;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+                        <p style="color: #4a3728; font-size: 18px; font-weight: bold; margin: 0;">February 10, 2026 - Baarat Welcome</p>
+                        <a href="https://maps.app.goo.gl/friFTYQLjnABcK916?g_st=a" target="_blank" style="display: inline-block; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 6px 15px; border-radius: 20px; text-decoration: none; font-size: 12px; box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3); white-space: nowrap;">↱ Get Directions</a>
+                    </div>
+                    <p style="color: #4a3728; font-size: 16px; margin-left: 20px;">04:00 AM |                 Baarat Arrival<span style="color: #1f0ae0; font-size: 14px; font-style: italic;"> (Stay and Refeshments at Hotel Urban Stay, Nagpur)</span></p>
+                    <p style="color: #4a3728; font-size: 16px; margin-left: 20px;">07:00 AM |                 Breakfast<span style="color: #1f0ae0; font-size: 14px; font-style: italic;"> (Bus from Hotel to Lothe Residence at 6:30 AM)</span></p>
+                    <p style="color: #4a3728; font-size: 16px; margin-left: 20px;">09:30 AM |                 Departure to Resort </p>
+                    <p style="color: #4a3728; font-size: 16px; margin-top: 10px; margin-left: 20px;"><strong>Venue:</strong> Lothe Residence, Nagpur - Tirupati Sagar Apartment, Flat 204, Ayurvedic Layout</p>
+                </div>
+
+                <div style="margin-bottom: 30px;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+                        <p style="color: #4a3728; font-size: 18px; font-weight: bold; margin: 0;">February 10, 2026 - Simant Poojan and Sangeet</p>
+                        <a href="https://maps.app.goo.gl/r42vR2QUktmUKFBz6" target="_blank" style="display: inline-block; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 6px 15px; border-radius: 20px; text-decoration: none; font-size: 12px; box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3); white-space: nowrap;">↱ Get Directions</a>
+                    </div>
+                    <p style="color: #4a3728; font-size: 16px; margin-left: 20px;">12:30 PM |                 Arrival at Resort and Lunch <span style="color: #1f0ae0; font-size: 14px; font-style: italic;">(Rest and Refresh for Amazing Evening)</span></p>
+                    <p style="color: #4a3728; font-size: 16px; margin-left: 20px;">04:00 PM |                 Simant Poojan<span style="color: #1f0ae0; font-size: 14px; font-style: italic;"> (Snacks Will be Served)</span></p>
+                    <p style="color: #4a3728; font-size: 16px; margin-left: 20px;">07:00 PM |                 Sangeet and Dinner</p>
+                    <p style="color: #1f0ae0; font-size: 14px; margin-left: 20px; margin-top: 10px; font-style: italic;">Rickshaw Service to Stage - Hitesh (<a href="tel:+919834296684" style="color: #1f0ae0; text-decoration: underline;">9834296684</a>)</p>
+                    <p style="color: #1f0ae0; font-size: 14px; margin-left: 20px; font-style: italic;">Food Service - Parth (<a href="tel:+917588330808" style="color: #1f0ae0; text-decoration: underline;">7588330808</a>)</p>
+                    <p style="color: #1f0ae0; font-size: 14px; margin-left: 20px; font-style: italic;">Medical Assistance - Parth (<a href="tel:+917588330808" style="color: #1f0ae0; text-decoration: underline;">7588330808</a>)</p>
+                    <p style="color: #1f0ae0; font-size: 14px; margin-left: 20px; font-style: italic;">Clothes Ironing Service - Available Only on February 10, 2026 (<a href="tel:+91xxxxxxxxx" style="color: #1f0ae0; text-decoration: underline;">xxxxxxxx</a>)</p>
+                    <p style="color: #4a3728; font-size: 16px; margin-top: 10px; margin-left: 20px;"><strong>Venue:</strong> MTDC Resort - Keshori Road, Navegaon Bandh, District Gondia, Maharashtra</p>
+                </div>
+
+                <div style="margin-bottom: 30px;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+                        <p style="color: #4a3728; font-size: 18px; font-weight: bold; margin: 0;">February 11, 2026 - Wedding Ceremony</p>
+                        <a href="https://maps.app.goo.gl/r42vR2QUktmUKFBz6" target="_blank" style="display: inline-block; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 6px 15px; border-radius: 20px; text-decoration: none; font-size: 12px; box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3); white-space: nowrap;">↱ Get Directions</a>
+                    </div>
+                    <p style="color: #4a3728; font-size: 16px; margin-left: 20px;">06:30 AM |                 Breakfast</p>
+                    <p style="color: #4a3728; font-size: 16px; margin-left: 20px;">09:24 AM |                 Wedding Ceremony <span style="color: #1f0ae0; font-size: 14px; font-style: italic;"> (Wedding Rituals will Continue till 11:30 AM)</span></p>
+                    <p style="color: #4a3728; font-size: 16px; margin-left: 20px;">10:00 AM |                 Lunch</p>
+                    <p style="color: #4a3728; font-size: 16px; margin-left: 20px;">11:30 AM |                 Shagun Ceremony</p>
+                    <p style="color: #4a3728; font-size: 16px; margin-left: 20px;">01:30 PM |                 Baarat Departute</p>
+                    <p style="color: #4a3728; font-size: 16px; margin-top: 10px; margin-left: 20px;"><strong>Venue:</strong> MTDC Resort - Keshori Road, Navegaon Bandh, District Gondia, Maharashtra</p>
+                </div>
+            </div>
+
+            <div class="card-footer">
+                <p><strong>We Look Forward to Celebrating With You!</strong></p>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <div id="inviteView" style="display: none;">
+        <div id="wedding-card">
         <div class="corner-decoration corner-top-left"></div>
         <div class="corner-decoration corner-top-right"></div>
         <div class="corner-decoration corner-bottom-left"></div>
@@ -597,7 +683,6 @@
                 <p style="font-style: italic; margin-top: 20px;">
                     Grace, Anjali, and Dr. Shashank Singh Kalra are Looking Forward to Celebrating with You!
                 </p>
-                
                 <div style="margin-top: 30px; padding-top: 20px; border-top: 2px solid rgba(74, 55, 40, 0.3);">
                     <h3 style="color: #4a3728; font-size: 24px; margin-bottom: 15px; font-weight: bold;">RSVP</h3>
                     <p>Shree Ghanshyam Sakharamji Lothe</p>
@@ -607,101 +692,18 @@
                 </div>
             </div>
         </div>
-    </div>
-    </div>
-
-    <div id="scheduleView" class="view-container">
-    <div id="wedding-schedule">
-        <div class="corner-decoration corner-top-left"></div>
-        <div class="corner-decoration corner-top-right"></div>
-        <div class="corner-decoration corner-bottom-left"></div>
-        <div class="corner-decoration corner-bottom-right"></div>
-
-        <div class="card-header">
-            <h1 style="margin-bottom: 5px;">Anamika & Varad</h1>
-            <h1>Wedding Schedule</h1>
-        </div>
-
-        <div class="card-content">
-            <div style="padding: 20px; text-align: left;">
-                
-                <div style="margin-bottom: 30px;">
-                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
-                        <p style="color: #4a3728; font-size: 18px; font-weight: bold; margin: 0;">February 8, 2026 - Mehendi Ceremony</p>
-                        <a href="https://maps.app.goo.gl/d5X6ceguRSL3uJMj8" target="_blank" style="display: inline-block; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 6px 15px; border-radius: 20px; text-decoration: none; font-size: 12px; box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3); white-space: nowrap;">↱ Get Directions</a>
-                    </div>
-                    <p style="color: #4a3728; font-size: 16px; margin-left: 20px;">04:00 PM |                 Mehendi Ceremony</p>
-                    <p style="color: #4a3728; font-size: 16px; margin-left: 20px;">06:00 PM |                 Dinner</p>
-                    <p style="color: #4a3728; font-size: 16px; margin-top: 10px; margin-left: 20px;"><strong>Venue:</strong> Lothe Residence, Nagpur - Tirupati Sagar Apartment, Flat 204, Ayurvedic Layout</p>
-                </div>
-
-                <div style="margin-bottom: 30px;">
-                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
-                        <p style="color: #4a3728; font-size: 18px; font-weight: bold; margin: 0;">February 9, 2026 - Haldi Ceremony</p>
-                        <a href="https://maps.app.goo.gl/d5X6ceguRSL3uJMj8" target="_blank" style="display: inline-block; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 6px 15px; border-radius: 20px; text-decoration: none; font-size: 12px; box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3); white-space: nowrap;">↱ Get Directions</a>
-                    </div>
-                    <p style="color: #4a3728; font-size: 16px; margin-left: 20px;">08:00 AM |                 Breakfast</p>
-                    <p style="color: #4a3728; font-size: 16px; margin-left: 20px;">10:30 AM |                 Haldi Ceremony</p>
-                    <p style="color: #4a3728; font-size: 16px; margin-left: 20px;">12:30 PM |                 Lunch</p>
-                    <p style="color: #4a3728; font-size: 16px; margin-left: 20px;">07:00 PM |                 Dinner</p>
-                    <p style="color: #4a3728; font-size: 16px; margin-top: 10px; margin-left: 20px;"><strong>Venue:</strong> Lothe Residence, Nagpur - Tirupati Sagar Apartment, Flat 204, Ayurvedic Layout</p>
-                    <p style="color: #4a3728; font-size: 14px; margin-left: 20px; margin-top: 5px;"><span style="color: #1f0ae0; font-style: italic;">Car Service Available - Rahul (<a href="tel:+918390784640" style="color: #1f0ae0; text-decoration: underline; font-size: 14px;">8390784640)</a></span></p>
-                </div>
-
-                <div style="margin-bottom: 30px;">
-                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
-                        <p style="color: #4a3728; font-size: 18px; font-weight: bold; margin: 0;">February 10, 2026 - Baarat Welcome</p>
-                        <a href="https://maps.app.goo.gl/friFTYQLjnABcK916?g_st=a" target="_blank" style="display: inline-block; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 6px 15px; border-radius: 20px; text-decoration: none; font-size: 12px; box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3); white-space: nowrap;">↱ Get Directions</a>
-                    </div>
-                    <p style="color: #4a3728; font-size: 16px; margin-left: 20px;">04:00 AM |                 Baarat Arrival<span style="color: #1f0ae0; font-size: 14px; font-style: italic;"> (Stay and Refeshments at Hotel Urban Stay, Nagpur)</span></p>
-                    <p style="color: #4a3728; font-size: 16px; margin-left: 20px;">07:00 AM |                 Breakfast<span style="color: #1f0ae0; font-size: 14px; font-style: italic;"> (Bus from Hotel to Lothe Residence at 6:30 AM)</span></p>
-                    <p style="color: #4a3728; font-size: 16px; margin-left: 20px;">09:30 AM |                 Departure to Resort 
-                    <p style="color: #4a3728; font-size: 16px; margin-top: 10px; margin-left: 20px;"><strong>Venue:</strong> Lothe Residence, Nagpur - Tirupati Sagar Apartment, Flat 204, Ayurvedic Layout</p>
-                </div>
-
-                <div style="margin-bottom: 30px;">
-                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
-                        <p style="color: #4a3728; font-size: 18px; font-weight: bold; margin: 0;">February 10, 2026 - Simant Poojan and Sangeet</p>
-                        <a href="https://maps.app.goo.gl/r42vR2QUktmUKFBz6" target="_blank" style="display: inline-block; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 6px 15px; border-radius: 20px; text-decoration: none; font-size: 12px; box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3); white-space: nowrap;">↱ Get Directions</a>
-                    </div>
-                    <p style="color: #4a3728; font-size: 16px; margin-left: 20px;">12:30 PM |                 Arrival at Resort and Lunch <span style="color: #1f0ae0; font-size: 14px; font-style: italic;">(Rest and Refresh for Amazing Evening)</span></p>
-                    <p style="color: #4a3728; font-size: 16px; margin-left: 20px;">04:00 PM |                 Simant Poojan<span style="color: #1f0ae0; font-size: 14px; font-style: italic;"> (Snacks Will be Served)</span></p>
-                    <p style="color: #4a3728; font-size: 16px; margin-left: 20px;">07:00 PM |                 Sangeet and Dinner</p>
-                    <p style="color: #1f0ae0; font-size: 14px; margin-left: 20px; margin-top: 10px; font-style: italic;">Rickshaw Service to Stage - Hitesh (<a href="tel:+919834296684" style="color: #1f0ae0; text-decoration: underline;">9834296684</a>)</p>
-                    <p style="color: #1f0ae0; font-size: 14px; margin-left: 20px; font-style: italic;">Food Service - Parth (<a href="tel:+917588330808" style="color: #1f0ae0; text-decoration: underline;">7588330808</a>)</p>
-                    <p style="color: #1f0ae0; font-size: 14px; margin-left: 20px; font-style: italic;">Medical Assistance - Parth (<a href="tel:+917588330808" style="color: #1f0ae0; text-decoration: underline;">7588330808</a>)</p>
-                    <p style="color: #1f0ae0; font-size: 14px; margin-left: 20px; font-style: italic;">Clothes Ironing Service - Available Only on February 10, 2026 (<a href="tel:+91xxxxxxxxx" style="color: #1f0ae0; text-decoration: underline;">xxxxxxxx</a>)</p>
-                    <p style="color: #1f0ae0; font-size: 14px; margin-left: 20px; font-style: italic;">Selfpay Makeup Services - Suwarna (<a href="tel:+919921688697" style="color: #1f0ae0; text-decoration: underline;">9921688697</a>)</p>
-                    <p style="color: #4a3728; font-size: 16px; margin-top: 10px; margin-left: 20px;"><strong>Venue:</strong> MTDC Resort - Keshori Road, Navegaon Bandh, District Gondia, Maharashtra</p>
-                </div>
-
-                <div style="margin-bottom: 30px;">
-                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
-                        <p style="color: #4a3728; font-size: 18px; font-weight: bold; margin: 0;">February 11, 2026 - Wedding Ceremony</p>
-                        <a href="https://maps.app.goo.gl/r42vR2QUktmUKFBz6" target="_blank" style="display: inline-block; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 6px 15px; border-radius: 20px; text-decoration: none; font-size: 12px; box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3); white-space: nowrap;">↱ Get Directions</a>
-                    </div>
-                    <p style="color: #4a3728; font-size: 16px; margin-left: 20px;">06:30 AM |                 Breakfast</p>
-                    <p style="color: #4a3728; font-size: 16px; margin-left: 20px;">09:24 AM |                 Wedding Ceremony <span style="color: #1f0ae0; font-size: 14px; font-style: italic;"> (Wedding Rituals will Continue till 11:30 AM)</span></p>
-                    <p style="color: #4a3728; font-size: 16px; margin-left: 20px;">10:00 AM |                 Lunch</p>
-                    <p style="color: #4a3728; font-size: 16px; margin-left: 20px;">11:30 AM |                 Shagun Ceremony</p>
-                    <p style="color: #4a3728; font-size: 16px; margin-left: 20px;">01:30 PM |                 Baarat Departute</p>
-                    <p style="color: #4a3728; font-size: 16px; margin-top: 10px; margin-left: 20px;"><strong>Venue:</strong> MTDC Resort - Keshori Road, Navegaon Bandh, District Gondia, Maharashtra</p>
-                </div>
-            </div>
-
-            <div class="card-footer">
-                <p><strong>We Look Forward to Celebrating With You!</strong></p>
-            </div>
         </div>
     </div>
+    <!-- Swap: Download/Share buttons on schedule (landing), Calendar/Directions on invitation -->
+    <div id="scheduleButtons" class="calendar-section">
+        <button class="download-btn" onclick="downloadCard()">Download as JPG</button>
+        <button class="download-btn" onclick="downloadCardAsPDF()">Save as PDF</button>
+        <button class="qr-section" onclick="openQRModal()">Tap to Share</button>
     </div>
-    
-    <div class="calendar-section" id="calendarButtons">
+
+    <div id="invitationButtons" class="calendar-section" style="display:none;">
         <button class="calendar-btn" onclick="addToCalendar()">📅 Add to Calendar</button>
         <a href="https://maps.app.goo.gl/cGjAQPRv63G6PDd86" target="_blank" class="calendar-btn" style="display: inline-block; text-decoration: none;">↱ Get Directions</a>
-    </div>
-
-    <div class="calendar-section" id="downloadButtons">
         <button class="download-btn" onclick="downloadCard()">Download as JPG</button>
         <button class="download-btn" onclick="downloadCardAsPDF()">Save as PDF</button>
         <button class="qr-section" onclick="openQRModal()">Tap to Share</button>
@@ -710,29 +712,30 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <script>
-        let currentView = 'invite';
+
+        let currentView = 'schedule';
 
         function toggleView() {
             const inviteView = document.getElementById('inviteView');
             const scheduleView = document.getElementById('scheduleView');
             const toggleBtn = document.getElementById('toggleBtn');
-            const calendarButtons = document.getElementById('calendarButtons');
-            const downloadButtons = document.getElementById('downloadButtons');
-            
-            if (currentView === 'invite') {
-                inviteView.classList.remove('active');
-                scheduleView.classList.add('active');
-                toggleBtn.textContent = 'View Invitation';
-                calendarButtons.style.display = 'none';
-                downloadButtons.style.display = 'block';
-                currentView = 'schedule';
-            } else {
-                scheduleView.classList.remove('active');
-                inviteView.classList.add('active');
+            const scheduleButtons = document.getElementById('scheduleButtons');
+            const invitationButtons = document.getElementById('invitationButtons');
+
+            if (currentView === 'schedule') {
+                scheduleView.style.display = 'none';
+                inviteView.style.display = 'block';
                 toggleBtn.textContent = 'View Schedule & Contacts';
-                calendarButtons.style.display = 'block';
-                downloadButtons.style.display = 'block';
+                scheduleButtons.style.display = 'none';
+                invitationButtons.style.display = 'block';
                 currentView = 'invite';
+            } else {
+                inviteView.style.display = 'none';
+                scheduleView.style.display = 'block';
+                toggleBtn.textContent = 'View Invitation';
+                scheduleButtons.style.display = 'block';
+                invitationButtons.style.display = 'none';
+                currentView = 'schedule';
             }
         }
 
@@ -793,12 +796,12 @@
             button.disabled = true;
 
             try {
-                const card = currentView === 'invite' 
-                    ? document.getElementById('wedding-card')
-                    : document.getElementById('wedding-schedule');
-                const filename = currentView === 'invite' 
-                    ? 'Anamika_Varad_Wedding_Card.jpg'
-                    : 'Anamika_Varad_Wedding_Schedule.jpg';
+                const card = currentView === 'schedule' 
+                    ? document.getElementById('wedding-schedule')
+                    : document.getElementById('wedding-card');
+                const filename = currentView === 'schedule' 
+                    ? 'Anamika_Varad_Wedding_Schedule.jpg'
+                    : 'Anamika_Varad_Wedding_Card.jpg';
                 
                 const canvas = await html2canvas(card, {
                     scale: 2,
